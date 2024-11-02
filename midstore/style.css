@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family-Poppins: wght@300;400; 500; 600; 700; 800;900&display=swap');
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Poppins', sans-serif; 
+}
+body {
+background: #eaeaea;
+overflow-y: hidden;
+}
+
+.header {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+padding: 30px 8%;
+background: transparent;
+display: flex;
+justify-content: space-between;
+align-items: center;
+z-index: 100;
+}
+
+.logo {
+font-size: 25px;
+color: #222;
+text-decoration: none;
+font-weight: 600;
+opacity: 1;
+animation: slideRight .5s ease forwards;
+}
+
+.navbar a {
+display: inline-block;
+font-size: 18px;
+color: #222;
+text-decoration: none;
+/* margin-right: 30px; */
+font-weight: 500;
+margin: 0 20px;
+transition: .3s;
+opacity: 0;
+animation: slideTop 1s ease forwards;
+animation-delay: calc(.2s * var(--i));
+}
+
+.navbar a:hover, 
+.navbar a.active {
+    color: #b7b7b9
+}
+
+.social-media {
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+    height: 40;
+}
+
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid transparent;
+    text-decoration: none;
+    transform: rotate(45deg);
+    transition: .5s;
+    opacity: 0;
+    animation: slideSci 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.social-media a:hover {
+    border-color: #65350F
+}
+
+.social-media a i {
+    font-size: 24px;
+    color: #65350F;
+    transform: rotate(-45deg);
+}
+
+.home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 8% 0;
+    overflow: hidden;
+}
+
+.home-content {
+    max-width: 630px;
+}
+
+.home-content h1 {
+    font-size: 50px;
+    line-height: 1.2;
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: 1s;
+    }
+
+.home-content h3 {
+    font-size: 40px;
+    color: 	#463324;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1.3s;
+}
+
+.home-content p {
+    font-size: 16px;
+    margin: 15px 0 30px;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1.6s;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 28px;
+    background: #463324;
+    border: 2px solid #463324;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    font-size: 16px;
+    color:#eaeaea;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .5s;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 1.3s;
+}
+
+.btn:hover {
+    background: transparent;
+    color: #463324;
+}
+
+.Dostoevsky img{
+    width: 300px;
+    margin-right: 110px;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1.8s;
+}
+
+.quote {
+    font-family: "Questrial", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: 5px;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
+    
+  }
+  
+  .signature {
+    font-family: "Mr De Haviland", cursive;
+    font-weight: 350;
+    font-style: normal;
+    font-size: 34px;
+    margin-left: 244px;
+    transform: rotate(-15deg);
+    margin-top: -30px;
+    opacity: 0;
+    animation: slideSci2 1s ease forwards;
+    animation-delay: 2.3s;
+    
+  }
+  
+  footer {
+    /* text-align: center; */
+    margin-left: 640px;
+    filter: opacity(0.5);
+    margin-top: -20px;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2.6s;  
+}
+
+/* keyframes animation */
+
+@keyframes slideRight {
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+@keyframes slideLeft {
+    0%{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+@keyframes slideBottom {
+    0%{
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideTop {
+    0%{
+        transform: translateY(80px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideSci {
+    0%{
+        transform: translateX(100px) rotate(45deg);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px) rotate(45deg);
+        opacity: 1;
+    }
+}
+@keyframes slideSci2 {
+    0%{
+        transform: translateX(100px) rotate(-15deg);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px) rotate(-15deg);
+        opacity: 1;
+    }
+}
+
+
