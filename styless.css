@@ -21,6 +21,7 @@ header{
 }
 .icon-cart{
     position: relative;
+    cursor: pointer;
 }
 .icon-cart span{
     position: absolute;
@@ -67,6 +68,7 @@ header{
     padding: 5px 10px;
     margin-top: 10px;
     border-radius: 20px;
+    cursor: pointer;
 }
 
 /* cart */
@@ -116,6 +118,7 @@ body.showCart .container{
     gap: 10px;
     text-align: center;
     align-items: center;
+    cursor: pointer;
 }
 .listCart .quantity span{
     display: inline-block;
