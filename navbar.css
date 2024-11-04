@@ -30,7 +30,7 @@ body {
     text-decoration: none;
     font-weight: 600;
     opacity: 1;
-    animation: slideRight .5s ease forwards;
+    /* animation: slideRight .5s ease forwards; */
 }
 
 .navbar a {
@@ -40,10 +40,10 @@ body {
     text-decoration: none;
     font-weight: 500;
     margin: 0 20px;
-    transition: .3s;
+    /* transition: .3s;
     opacity: 0;
     animation: slideTop 1s ease forwards;
-    animation-delay: calc(.2s * var(--i));
+    animation-delay: calc(.2s * var(--i)); */
 }
 
 .navbar a:hover, 
@@ -66,11 +66,11 @@ body {
     background: transparent;
     border: 2px solid transparent;
     text-decoration: none;
-    transform: rotate(45deg);
+    /* transform: rotate(45deg);
     transition: .5s;
     opacity: 0;
     animation: slideSci 1s ease forwards;
-    animation-delay: calc(.2s * var(--i));
+    animation-delay: calc(.2s * var(--i)); */
 }
 
 .social-media a:hover {
@@ -83,7 +83,7 @@ body {
     transform: rotate(-45deg);
 }
 
-@keyframes slideRight {
+/* @keyframes slideRight {
     0% {
         transform: translateX(-100px);
         opacity: 0;
@@ -114,4 +114,4 @@ body {
         transform: translateX(0px) rotate(45deg);
         opacity: 1;
     }
-}
+} */
