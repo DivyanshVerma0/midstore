@@ -143,4 +143,50 @@ const initApp = () => {
         }
     })
 }
+
+document.getElementById('pay-button').onclick = function(e){
+    e.preventDefault();
+
+    // Fetch order ID from server
+    fetch('/create-order', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ amount: "50000", currency: "INR" })
+    })
+    .then(response => response.json())
+    .then(order => {
+        const options = {
+            key: "your_key_id",
+            amount: order.amount,
+            currency: order.currency,
+            name: "Your Company Name",
+            description: "Test Transaction",
+            order_id: order.id,
+            handler: function (response) {
+                // Send payment details to the server for verification
+                fetch('/payment/verify', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        razorpay_payment_id: response.razorpay_payment_id,
+                        razorpay_order_id: response.razorpay_order_id,
+                        razorpay_signature: response.razorpay_signature
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === "success") {
+                        alert("Payment Verified Successfully");
+                    } else {
+                        alert("Payment Verification Failed");
+                    }
+                });
+            }
+        };
+        const rzp = new Razorpay(options);
+        rzp.open();
+    })
+    .catch(error => console.error('Error:', error));
+};
+
 initApp();

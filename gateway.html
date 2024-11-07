@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Razorpay Payment Integration</title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+    <h1>Checkout Page</h1>
+    <button id="pay-button">Pay with Razorpay</button>
+
+    <script>
+        // add razor pay's API key......
+        const options = {
+            "key": "rzp_test_ABC123XYZ", // Enter the Key 
+            "amount": "50000", // Amount is in currency subunits. Example: 50000 for ₹500
+            "currency": "INR",
+            "name": "Your Company Name",
+            "description": "Test Transaction",
+            "image": "https://your_logo_url.com/logo.png",
+            "handler": function (response){
+                alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
+            },
+            "prefill": {
+                "name": "Customer Name",
+                "email": "customer@example.com",
+                "contact": "9999999999"
+            },
+            "theme": {
+                "color": "#3399cc"
+            }
+        };
+
+        document.getElementById('pay-button').onclick = function(e){
+            e.preventDefault();
+            const razorpay = new Razorpay(options);
+            razorpay.open();
+        }
+    </script>
+</body>
+</html>
