@@ -144,6 +144,18 @@ body.showCart .container{
 .listCart::-webkit-scrollbar{
     width: 0;
 }
+
+/* PAY button */
+.pay-button{
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+/* .paybtn{
+    
+} */
+
+
 @media only screen and (max-width: 992px) {
     .listProduct{
         grid-template-columns: repeat(3, 1fr);
