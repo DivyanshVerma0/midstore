@@ -144,6 +144,11 @@ const initApp = () => {
     })
 }
 
+
+
+initApp();
+
+// Code for client side
 document.getElementById('pay-button').onclick = function(e){
     e.preventDefault();
 
@@ -188,5 +193,3 @@ document.getElementById('pay-button').onclick = function(e){
     })
     .catch(error => console.error('Error:', error));
 };
-
-initApp();
